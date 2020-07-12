@@ -1,0 +1,24 @@
+{
+  "name": "tone-workshop",
+  "version": "1.0.0",
+  "description": "creative coding workshop with tonejs!",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palgorhythm/tone-workshop.git"
+  },
+  "author": "jacob richards",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/palgorhythm/tone-workshop/issues"
+  },
+  "homepage": "https://github.com/palgorhythm/tone-workshop#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "tone": "^13.8.25"
+  }
+}
