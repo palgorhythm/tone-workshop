@@ -25,15 +25,28 @@ function animate() {
   controls.update(); // update the position of the camera based on mouse movement
 
   // // rotate all objects by their custom rotation amounts
-  // updateRotationsOfObjects()
+  updateRotationsOfObjects()
 
   // tell the ThreeJS renderer what scene to render, and with what camera
   renderer.render(scene, camera);
 }
 
 // create a cube
-let cube = createCube();
+// let cube = createCube();
+export let objects = createManyRandomObjects();
+let rotations = [];
+// loop from 0 all the way to 15 (bc we have 16 objects)
+for (let i = 0; i < objects.length; i += 1) {
+  // create a random x, y, and z rotation for the current object.
+  rotations.push([
+    Math.random() * 0.03,
+    Math.random() * 0.03,
+    Math.random() * 0.03,
+  ]);
+}
+
 animate();
+
 
 // SECTION 4: CREATE FUNCTIONS TO GET RANDOM COLORS/SHAPES
 export function getRandomColor() {
@@ -94,7 +107,7 @@ function createObject(position) {
   return newObject;
 }
 
-createObject([-4, 0, 0]);
+// createObject([-4, 0, 0]);
 
 // SECTION 6: CREATE MANY OBJECTS
 function createManyRandomObjects() {
@@ -123,19 +136,6 @@ function createManyRandomObjects() {
     createObject([width, -height, -depth]),
     createObject([width * 3, -height, -depth]),
   ];
-}
-
-export let objects = createManyRandomObjects();
-
-let rotations = [];
-// loop from 0 all the way to 15 (bc we have 16 objects)
-for (let i = 0; i < objects.length; i += 1) {
-  // create a random x, y, and z rotation for the current object.
-  rotations.push([
-    Math.random() * 0.03,
-    Math.random() * 0.03,
-    Math.random() * 0.03,
-  ]);
 }
 
 function updateRotationsOfObjects() {

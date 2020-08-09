@@ -66,7 +66,7 @@ function applyMusicToGraphics(currentStep){
       // we're at the beginning of the musical loop!
       objects[i].scale.set(2, 2, 2);
       objects[i].material.color.set(getRandomColor());
-      setRandomNote(i);
+      // setRandomNote(i);
     }
   }
 }
